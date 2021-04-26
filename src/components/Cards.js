@@ -10,58 +10,79 @@ class Card extends Component {
       pokeName: '',
       pokeImage: '',
       pokeForm: '',
+      pokeID: '',
     }
   }
 
   componentDidMount() {
-    Promise.all([
-      fetch("https://pokeapi.co/api/v2/pokemon/grovyle"),
-      fetch("https://pokeapi.co/api/v2/pokemon/grovyle").then(response => response.json()).then(data => fetch(data.species.url))])
-      .then(([pokeName, pokeForm]) => {
-        return Promise.all([pokeName.json(), pokeForm.json()])
-      })
-      .then(([pokeName, pokeForm]) => {
-        this.setState({
-          pokeName: pokeName.forms[0].name,
-          pokeImage: pokeName.sprites.front_default,
-          pokeForm: pokeForm.flavor_text_entries[1].flavor_text
-        })
-      })
+    this.handleOnClick();
+  }
+
+  randomPokeID = () => {
+    return Math.floor(Math.random()*898)+1 //current highest pokeID is 898.
+  }
+
+  searchValueCheck = () => {
+    if (typeof(this.state.searchfield) === 'number') {
+      return this.state.searchfield;
+    } else if (typeof(this.state.searchfield) === 'string') {
+      return this.state.searchfield.toLowerCase()
     }
+  }
+  
   
   searchPokemon = () => {
     Promise.all([
-      fetch(`https://pokeapi.co/api/v2/pokemon/${this.state.searchfield}`),
-      fetch(`https://pokeapi.co/api/v2/pokemon/${this.state.searchfield}`).then(response => response.json()).then(data => fetch(data.species.url))])
+      fetch(`https://pokeapi.co/api/v2/pokemon/${this.searchValueCheck()}`),
+      fetch(`https://pokeapi.co/api/v2/pokemon/${this.searchValueCheck()}`).then(response => response.json()).then(data => fetch(data.species.url))]) /*fetches pokemon-species url*/
       .then(([pokeName, pokeForm]) => {
         return Promise.all([pokeName.json(), pokeForm.json()])
       })
       .then(([pokeName, pokeForm]) => {
         this.setState({
-          pokeName: pokeName.forms[0].name,
+          pokeName: pokeName.name,
           pokeImage: pokeName.sprites.front_default,
-          pokeForm: pokeForm.flavor_text_entries[1].flavor_text
+          pokeForm: pokeForm.flavor_text_entries[1].flavor_text,
         })
       })
       .catch((error) => {
-        console.log(error);
+        if (error) {
+          console.log(error)
+        } 
       });
   }
 
   onSearchChange = (searchValue) => {
-    this.setState({ searchfield: searchValue.target.value });
-    this.searchPokemon();
+    this.setState({ searchfield: searchValue.target.value }, () => {
+      this.searchPokemon();
+    });
+  }
+
+  handleKeyPress = (searchValue) => {
+    if (searchValue.key === 'Enter'){
+        this.setState({ searchfield: searchValue.target.value }, () => {
+          this.searchPokemon();
+        });
+    }
+  }
+
+  handleOnClick = () => {
+    const pokeID = this.randomPokeID();
+    this.setState({ searchfield: pokeID }, () => {
+      this.searchPokemon();
+    });
   }
 
   render() {
     return (
       <div className="flex justify-center w-100 h-100 test">
-        <div className="bg-light-green br3 pa3 ma2 bw2 tc shadow-5 flex flex-column w-20 h-60">
+        <div className="tc justify-center">
           <h1 className="pokeName">{this.state.pokeName}</h1>
           <img src={this.state.pokeImage} width="200" height="200" alt="pokemong" className="center"/> 
-          {this.state.pokeForm}
+          <div className="pa4 f6">{this.state.pokeForm}</div>
           <div className="pa3 ma2">
-            <Searchbox searchChange={this.onSearchChange} />
+            <Searchbox searchChange={this.handleKeyPress} />
+            <button onClick={this.handleOnClick} className="ma3 pa2 br3 f6">Random Pokemon</button>
           </div>
         </div>
       </div>

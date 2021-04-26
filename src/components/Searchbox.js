@@ -4,10 +4,10 @@ const Searchbox = ({ searchChange }) => {
     return(
         <div>
             <input
-                className='pa3 br4 ba b--green bg-lightest-blue'
+                className='pa2 br4 ba b--green bg-lightest-blue f6 tc'
                 type='search'
                 placeholder='Search Pokemons!'
-                onChange={searchChange} />
+                onKeyPress={searchChange}/>
         </div>
     );
 }

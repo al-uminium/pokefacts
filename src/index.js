@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Card from './components/Cards.js'
 import reportWebVitals from './reportWebVitals';
+import "@fontsource/press-start-2p/400.css";
 
 ReactDOM.render(<Card />, document.getElementById('root')
 );
