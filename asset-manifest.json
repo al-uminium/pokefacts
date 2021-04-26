@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/pokefacts/static/css/main.e8b37004.chunk.css",
-    "main.js": "/pokefacts/static/js/main.68b87ae4.chunk.js",
-    "main.js.map": "/pokefacts/static/js/main.68b87ae4.chunk.js.map",
-    "runtime-main.js": "/pokefacts/static/js/runtime-main.f0ed88b9.js",
-    "runtime-main.js.map": "/pokefacts/static/js/runtime-main.f0ed88b9.js.map",
-    "static/css/2.fe359a49.chunk.css": "/pokefacts/static/css/2.fe359a49.chunk.css",
-    "static/js/2.b5c8b22e.chunk.js": "/pokefacts/static/js/2.b5c8b22e.chunk.js",
-    "static/js/2.b5c8b22e.chunk.js.map": "/pokefacts/static/js/2.b5c8b22e.chunk.js.map",
-    "static/js/3.93806205.chunk.js": "/pokefacts/static/js/3.93806205.chunk.js",
-    "static/js/3.93806205.chunk.js.map": "/pokefacts/static/js/3.93806205.chunk.js.map",
+    "main.css": "/pokefacts/static/css/main.1c808289.chunk.css",
+    "main.js": "/pokefacts/static/js/main.d8c26a1b.chunk.js",
+    "main.js.map": "/pokefacts/static/js/main.d8c26a1b.chunk.js.map",
+    "runtime-main.js": "/pokefacts/static/js/runtime-main.e49faaa9.js",
+    "runtime-main.js.map": "/pokefacts/static/js/runtime-main.e49faaa9.js.map",
+    "static/css/2.27e758e9.chunk.css": "/pokefacts/static/css/2.27e758e9.chunk.css",
+    "static/js/2.23498364.chunk.js": "/pokefacts/static/js/2.23498364.chunk.js",
+    "static/js/2.23498364.chunk.js.map": "/pokefacts/static/js/2.23498364.chunk.js.map",
+    "static/js/3.c33f660a.chunk.js": "/pokefacts/static/js/3.c33f660a.chunk.js",
+    "static/js/3.c33f660a.chunk.js.map": "/pokefacts/static/js/3.c33f660a.chunk.js.map",
     "index.html": "/pokefacts/index.html",
-    "static/css/2.fe359a49.chunk.css.map": "/pokefacts/static/css/2.fe359a49.chunk.css.map",
-    "static/css/main.e8b37004.chunk.css.map": "/pokefacts/static/css/main.e8b37004.chunk.css.map",
-    "static/js/2.b5c8b22e.chunk.js.LICENSE.txt": "/pokefacts/static/js/2.b5c8b22e.chunk.js.LICENSE.txt"
+    "static/css/2.27e758e9.chunk.css.map": "/pokefacts/static/css/2.27e758e9.chunk.css.map",
+    "static/css/main.1c808289.chunk.css.map": "/pokefacts/static/css/main.1c808289.chunk.css.map",
+    "static/js/2.23498364.chunk.js.LICENSE.txt": "/pokefacts/static/js/2.23498364.chunk.js.LICENSE.txt",
+    "static/media/400.css": "/pokefacts/static/media/press-start-2p-latin-ext-400-normal.74ce1152.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.f0ed88b9.js",
-    "static/css/2.fe359a49.chunk.css",
-    "static/js/2.b5c8b22e.chunk.js",
-    "static/css/main.e8b37004.chunk.css",
-    "static/js/main.68b87ae4.chunk.js"
+    "static/js/runtime-main.e49faaa9.js",
+    "static/css/2.27e758e9.chunk.css",
+    "static/js/2.23498364.chunk.js",
+    "static/css/main.1c808289.chunk.css",
+    "static/js/main.d8c26a1b.chunk.js"
   ]
 }
